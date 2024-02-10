@@ -4,10 +4,10 @@ from llama_index.llms import OpenAI
 import openai
 from llama_index import SimpleDirectoryReader
 
-st.set_page_config(page_title="Find your path with the vedas, powered by AI", page_icon="", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Spiritual Path, powered by AI", page_icon="", layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
-st.title("Find your path as described in the vedas, powered by AI")
-st.info("Write atleast two sentences regarding what you want to talk about. If you give more clarity about what you want, then the answers will be better. )", icon="📃")
+st.title("Aap ka problem pucho, Sahi rasta Suno")
+st.info("Write atleast two sentences regarding what you want to talk about. If you give more clarity about what you want, then the answers will be better.", icon="📃")
          
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [

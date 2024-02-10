@@ -40,7 +40,7 @@ def load_data():
     with st.spinner(text="Loading and indexing the docs – hang tight! This should take 1-2 minutes."):
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
-        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-4", temperature=0.3, system_prompt="You are an expert on old texts of indian spirituality like vedas, ramayana, etc. Assume that all questions are related to the the documents. Keep your answers spiritual and  based on texts – do not hallucinate features. The user is communicating in Hindi. the user is a hindu with deep respect for the religion and considers the text as gods words. never disrespect the texts. Answer in Hindi as much as possible"))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-4", temperature=0.3, system_prompt="You are an expert on old texts of indian spirituality like vedas, ramayana, etc. Assume that all questions are related to the the documents. Keep your answers spiritual and  based on texts – do not hallucinate features. The user is communicating in Hindi. the user is a hindu with deep respect for the religion and considers the text as gods words. never disrespect the texts. Answer in Hindi, use devanagari script"))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 
